@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+
+        <import type="android.view.View"/>
+        <import type="android.graphics.Typeface"/>
+
+    </data>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
+    <com.yaxon.bubiao.view.TitleLayout
+        android:id="@id/titleLayout"
+        style="@style/TitleDefStyle"
+        app:textRight="保存"
+        app:textcenter="主动安全开关" />
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+            <include layout="@layout/item_layout_title"
+                app:title="@{`开关设置`}"
+                app:lineVisible="@{View.GONE}"/>
+            <include
+                android:id="@+id/checkbox_adas"
+                layout="@layout/item_layout_checkbox"
+                app:title="@{`ADAS`}"
+                app:lineVisible="@{View.VISIBLE}"/>
+            <include
+                android:id="@+id/checkbox_dsm"
+                layout="@layout/item_layout_checkbox"
+                app:title="@{`DSM`}"
+                app:lineVisible="@{View.VISIBLE}"/>
+            <include
+                android:id="@+id/checkbox_model"
+                layout="@layout/item_layout_checkbox"
+                app:title="@{`演示模式`}"
+                app:lineVisible="@{View.GONE}"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_10"
+                android:background="@color/windowBackground"/>
+
+            <include layout="@layout/item_layout_title"
+                app:title="@{`阀值范围`}"
+                app:lineVisible="@{View.GONE}"/>
+            <include
+                android:id="@+id/seekbar_adas"
+                layout="@layout/item_layout_seekbar"
+                app:title="@{`ADAS速度阀值`}"
+                app:lineVisible="@{View.VISIBLE}"/>
+
+            <include
+                android:id="@+id/seekbar_dsm"
+                layout="@layout/item_layout_seekbar"
+                app:title="@{`DSM速度阀值`}"
+                app:lineVisible="@{View.GONE}"/>
+
+
+        </LinearLayout>
+
+    </ScrollView>
+    </LinearLayout>
+</layout>
+

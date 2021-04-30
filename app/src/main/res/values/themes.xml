@@ -1,0 +1,51 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <style name="BaseAppTheme" parent="Theme.AppCompat.DayNight.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>   <!--应用的主要色调，actionBar默认使用该颜色，Toolbar导航栏的底色-->
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>  <!--应用的主要暗色调，statusBarColor默认使用该颜色-->
+        <item name="colorAccent">@color/colorAccent</item> <!--按钮选中或者点击获得焦点后的颜色-->
+        <item name="android:statusBarColor">@color/colorPrimary</item><!-- 状态栏颜色，默认使用colorPrimaryDark-->
+        <item name="android:navigationBarColor">@color/windowBackground</item><!--底部导航栏颜色-->
+        <item name="android:outlineProvider">background</item>    <!--阴影边界-->
+        <item name="android:windowBackground">@color/windowBackground</item><!-- 窗口背景颜色-->
+        <item name="android:textAllCaps">false</item>
+        <item name="android:textColorPrimary">@color/textColorPrimary</item>  <!--应用的主要文字颜色,actionBar的标题文字默认使用该颜色-->
+        <item name="android:textColor">@color/textColorPrimary</item>   <!--Button,textView的文字颜色-->
+        <item name="android:editTextColor">@color/textColorPrimary</item>  <!--默认EditView输入框字体的颜色。-->
+        <item name="android:textColorSecondary">@color/textColorSecondary</item>
+        <item name="colorControlHighlight">@color/colorRipple</item>  <!--控件按压时的色调-->
+    </style>
+
+    <style name="AppTheme" parent="BaseAppTheme">
+        <item name="android:windowLightStatusBar" tools:ignore="NewApi">true</item>
+        <item name="android:windowLightNavigationBar" tools:ignore="NewApi">true</item>
+    </style>
+
+
+    <!--自定义标题栏样式-->
+    <style name="TitleDefStyle">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/title_height</item>
+        <item name="titleTextSize">@dimen/sp_16</item>            <!--文字大小sp-->
+        <item name="menuTextSize">@dimen/sp_14</item>            <!--文字大小sp-->
+        <item name="textColor">@color/white</item>     <!--文字颜色-->
+        <item name="textIconSpace">5dip</item>     <!--文字和图标之间的间距-->
+        <item name="leftSpace">@dimen/dp_16</item>    <!--标题左侧的空隙-->
+        <item name="rightSpace">@dimen/dp_16</item>   <!--标题右侧的空隙-->
+        <item name="centerRowSpace">3dip</item><!--中间箭头和文字的距离-->
+        <item name="android:background">@drawable/bg_title</item>
+        <item name="iconBack">@mipmap/icon_back</item>
+    </style>
+
+
+    <style name="btn_style">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">@dimen/dp_50</item>
+
+        <item name="android:gravity">center</item>
+        <item name="android:textSize">@dimen/sp_17</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+</resources>

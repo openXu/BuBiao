@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--主题色：一般用于标题-->
+    <color name="colorPrimary">#F2F7F9</color>
+    <!-- 状态栏颜色 -->
+    <color name="colorPrimaryDark">#F2F7F9</color>
+    <!--colorAccent: 辅助色（或强调色）：一般用于某些与主题呼应的图片-->
+    <color name="colorAccent">#FFFD916B</color>
+    <!--Window的背景色-->
+    <color name="windowBackground">#FFEDEDED</color>
+    <!--主要的文字颜色，一般TextView的文字都是这个颜色-->
+    <color name="textColorPrimary">#FF222222</color>
+    <!--辅助的文字颜色，一般比textColorPrimary的颜色弱一点，用于一些弱化的表示-->
+    <color name="textColorSecondary">#FF9B9B9B</color>
+    <color name="textColorThird">#9297A2</color>
+
+    <color name="bgColorPrimary">#F2F7F9</color> <!--主要背景色，比如item-->
+    <color name="colorRipple">#FFFD916B</color>   <!--涟漪-->
+    <color name="colorBadge">#FFFD916B</color>
+
+    <!--FToast-->
+    <color name="toast_defaultTextColor">#FFFFFF</color> <!--Toast默认文字颜色-->
+    <color name="toast_errorColor">#353A3E</color> <!--各种Toast背景底色-->
+    <color name="toast_infoColor">#353A3E</color>
+    <color name="toast_successColor">#353A3E</color>
+    <color name="toast_warningColor">#353A3E</color>
+    <color name="toast_normalColor">#353A3E</color>
+
+
+    <color name="backcolor_gray">#FFEDEDED</color>
+    <color name="line_color">#FFCCCCCC</color>
+
+    <color name="btn_normal">#FFFC7049</color>
+    <color name="btn_pressed">#FFFC7049</color>
+
+    <color name="text_color_selected">#FFFC7049</color>
+    <color name="text_color_unselected">#FF9B9B9B</color>
+    <color name="white">#FFFFFF</color>
+    <color name="transparent">#00000000</color>
+
+
+</resources>

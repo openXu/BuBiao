@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable name="title" type="String" />
+        <variable name="lineVisible" type="Integer" />
+    </data>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white">
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_48"
+            android:gravity="center_vertical"
+            android:paddingLeft="@dimen/dp_19"
+            android:paddingRight="@dimen/dp_19"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:textColor="@color/textColorPrimary"
+            android:textSize="@dimen/sp_16"
+            android:text="@{title.toString()}"/>
+
+        <View
+            android:id="@+id/line1"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/dp_04"
+            android:background="@color/line_color"
+            android:layout_marginLeft="@dimen/dp_19"
+            android:layout_marginRight="@dimen/dp_19"
+            app:layout_constraintTop_toBottomOf="@+id/title"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"/>
+
+
+        <com.yaxon.bubiao.view.MySeekBar
+            android:id="@+id/seekbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="@dimen/dp_19"
+            android:paddingRight="@dimen/dp_19"
+            android:paddingTop="@dimen/dp_16"
+            android:paddingBottom="@dimen/dp_16"
+            app:layout_constraintTop_toBottomOf="@+id/line1"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:min="0"
+            app:max="120"
+            app:progress="50"
+            app:textSize="@dimen/sp_14"
+            app:barSize="@dimen/dp_12"
+            app:buttonRaidus="@dimen/dp_10"
+            app:textSpace="@dimen/dp_5"
+            />
+      <!--  <SeekBar
+            android:id="@+id/seekbar"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="@dimen/dp_19"
+            android:layout_marginRight="@dimen/dp_19"
+            app:layout_constraintTop_toBottomOf="@+id/line1"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:max="255"
+            android:progress="255"
+            android:progressDrawable="@drawable/seekbar_bg"
+            android:thumb="@drawable/seekbar_thumb"
+            android:thumbOffset="@dimen/dp_16"
+            />
+-->
+        <View
+            android:id="@+id/line2"
+            android:visibility="@{lineVisible}"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/dp_04"
+            android:background="@color/line_color"
+            app:layout_constraintTop_toBottomOf="@+id/seekbar"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+
+</layout>
+

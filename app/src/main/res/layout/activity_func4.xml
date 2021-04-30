@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <import type="android.view.View"/>
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
+        <com.yaxon.bubiao.view.TitleLayout
+            android:id="@id/titleLayout"
+            style="@style/TitleDefStyle"
+            app:textRight="保存"
+            app:textcenter="部标参数配置" />
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center_horizontal"
+                android:orientation="vertical">
+                <include layout="@layout/item_layout_title"
+                    app:title="@{`网络参数设置`}"
+                    app:lineVisible="@{View.GONE}"/>
+                <include
+                    android:id="@+id/set1_ip1"
+                    layout="@layout/item_layout_input2"
+                    app:important="@{View.VISIBLE}"
+                    app:title="@{`第一IP端口`}"
+                    app:hint1="@{`请输入IP`}"
+                    app:hint2="@{`端口`}"/>
+                <include
+                    android:id="@+id/set1_ip2"
+                    layout="@layout/item_layout_input2"
+                    app:important="@{View.INVISIBLE}"
+                    app:title="@{`第二IP端口`}"
+                    app:hint1="@{`请输入IP`}"
+                    app:hint2="@{`端口`}"/>
+                <include
+                    android:id="@+id/set1_ip3"
+                    layout="@layout/item_layout_input2"
+                    app:important="@{View.INVISIBLE}"
+                    app:title="@{`第三IP端口`}"
+                    app:hint1="@{`请输入IP`}"
+                    app:hint2="@{`端口`}"/>
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp_20"
+                    android:background="@color/white"/>
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp_10"
+                    android:background="@color/windowBackground"/>
+
+                <include layout="@layout/item_layout_title"
+                    app:title="@{`网络参数设置`}"
+                    app:lineVisible="@{View.GONE}"/>
+                <include
+                    android:id="@+id/set2_phone"
+                    layout="@layout/item_layout_input1"
+                    app:important="@{View.VISIBLE}"
+                    app:title="@{`本机号`}"
+                    app:hint="@{`请输入本机号`}"/>
+                <include
+                    android:id="@+id/set2_id"
+                    layout="@layout/item_layout_input1"
+                    app:important="@{View.INVISIBLE}"
+                    app:title="@{`设备ID`}"
+                    app:hint="@{`请输入设备ID`}"/>
+                <include
+                    android:id="@+id/set2_num"
+                    layout="@layout/item_layout_input1"
+                    app:important="@{View.INVISIBLE}"
+                    app:title="@{`设备号`}"
+                    app:hint="@{`请输入设备号`}"/>
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp_20"
+                    android:background="@color/white"/>
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp_10"
+                    android:background="@color/windowBackground"/>
+
+                <include layout="@layout/item_layout_title"
+                    app:title="@{`网络参数设置`}"
+                    app:lineVisible="@{View.GONE}"/>
+                <include
+                    android:id="@+id/set3_vin"
+                    layout="@layout/item_layout_input1"
+                    app:important="@{View.VISIBLE}"
+                    app:title="@{`VIN号`}"
+                    app:hint="@{`请输入VIN码`}"/>
+                <include
+                    android:id="@+id/set3_carnum"
+                    layout="@layout/item_layout_input1"
+                    app:important="@{View.VISIBLE}"
+                    app:title="@{`车牌号`}"
+                    app:hint="@{`请输入车牌号`}"/>
+                <include
+                    android:id="@+id/set3_carcolor"
+                    layout="@layout/item_layout_input1"
+                    app:important="@{View.INVISIBLE}"
+                    app:title="@{`车牌颜色`}"
+                    app:hint="@{`车牌颜色`}"/>
+                <include
+                    android:id="@+id/set3_capital"
+                    layout="@layout/item_layout_input1"
+                    app:important="@{View.INVISIBLE}"
+                    app:title="@{`省域ID`}"
+                    app:hint="@{`省域ID`}"/>
+                <include
+                    android:id="@+id/set3_city"
+                    layout="@layout/item_layout_input1"
+                    app:important="@{View.INVISIBLE}"
+                    app:title="@{`市域ID`}"
+                    app:hint="@{`市域ID`}"/>
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp_20"
+                    android:background="@color/white"/>
+            </LinearLayout>
+
+        </ScrollView>
+
+    </LinearLayout>
+</layout>
+

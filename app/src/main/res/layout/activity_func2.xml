@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <import type="android.view.View"/>
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
+        <com.yaxon.bubiao.view.TitleLayout
+            android:id="@id/titleLayout"
+            style="@style/TitleDefStyle"
+            app:textRight="保存"
+            app:textcenter="主动安全参数" />
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center_horizontal"
+                android:orientation="vertical">
+
+                <include layout="@layout/item_layout_title"
+                    app:title="@{`灵敏度设置`}"
+                    app:lineVisible="@{View.GONE}"/>
+                <include
+                    android:id="@+id/radio_adas"
+                    layout="@layout/item_layout_radiobt"
+                    app:title="@{`ADAS灵敏度`}"/>
+                <include
+                    android:id="@+id/radio_dsm"
+                    layout="@layout/item_layout_radiobt"
+                    app:title="@{`DSM灵敏度`}"/>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp_10"
+                    android:background="@color/windowBackground"/>
+
+                <include layout="@layout/item_layout_title"
+                    app:title="@{`功能小项开关`}"
+                    app:lineVisible="@{View.GONE}"/>
+                <include
+                    android:id="@+id/checkbox_adas"
+                    layout="@layout/item_layout_checkbox"
+                    app:title="@{`ADAS`}"
+                    app:lineVisible="@{View.VISIBLE}"/>
+                <include
+                    android:id="@+id/checkbox_dsm"
+                    layout="@layout/item_layout_checkbox"
+                    app:title="@{`DSM`}"
+                    app:lineVisible="@{View.GONE}"/>
+
+
+            </LinearLayout>
+
+        </ScrollView>
+
+    </LinearLayout>
+</layout>
+
