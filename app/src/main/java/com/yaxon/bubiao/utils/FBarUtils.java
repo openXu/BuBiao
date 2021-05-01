@@ -32,7 +32,7 @@ import static android.Manifest.permission.EXPAND_STATUS_BAR;
 
 
 /**
- * Author: openXu
+ * Author: openX
  * Time: 2019/3/14 11:09
  * class: FBarUtils
  * Description:状态栏工具

@@ -28,6 +28,7 @@ public class LoginActivity extends BaseActivity<ActivityLoginBinding> {
 
         binding.tvEnter.setOnClickListener(v->{
             startActivity(new Intent(LoginActivity.this, MainActivity.class));
+            LoginActivity.this.finish();
         });
     }
 

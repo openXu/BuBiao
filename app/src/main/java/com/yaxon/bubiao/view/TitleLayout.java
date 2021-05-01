@@ -27,7 +27,7 @@ import com.yaxon.bubiao.utils.FLog;
 
 
 /**
- * autour: openXu
+ * autour: openX
  * date: 2017/3/10 13:32
  * className: TitleLayout
  * version:

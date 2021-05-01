@@ -14,7 +14,7 @@ import java.util.List;
 import java.util.Stack;
 
 /**
- * Author: openXu
+ * Author: openX
  * Time: 2019/2/23 14:49
  * class: BaseApplication
  * Description: Application请继承该基类

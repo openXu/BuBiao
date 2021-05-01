@@ -17,7 +17,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 
 /**
- * autour : openXu
+ * autour : openX
  * date : 2017/9/7 19:04
  * className : ViewHolder
  * version : 1.0

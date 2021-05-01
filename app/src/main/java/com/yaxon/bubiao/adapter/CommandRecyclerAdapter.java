@@ -15,7 +15,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 
 /**
- * autour : openXu
+ * autour : openX
  * date : 2017/9/7 19:05
  * className : CommandRecyclerAdapter
  * version : 1.0

@@ -1,7 +1,7 @@
 package com.yaxon.bubiao.utils;
 
 /**
- * Author: openXu
+ * Author: openX
  * Time: 2021/4/30 13:59
  * class: IntentDocumentView
  * Description:

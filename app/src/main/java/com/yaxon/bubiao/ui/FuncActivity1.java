@@ -10,7 +10,9 @@ import com.yaxon.bubiao.restory.SpKey;
 import com.yaxon.bubiao.utils.toasty.FToast;
 import com.yaxon.bubiao.view.TitleLayout;
 
-
+/**
+ * 功能1 ： 主动安全开关
+ */
 public class FuncActivity1 extends BaseActivity<ActivityFunc1Binding> {
 
     @Override

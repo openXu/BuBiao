@@ -33,8 +33,10 @@ public class SplashActivity extends BaseActivity<ActivitySplashBinding> {
                 .observeOn(AndroidSchedulers.mainThread())
                 .as(AutoDispose.autoDisposable(
                 AndroidLifecycleScopeProvider.from(this, Lifecycle.Event.ON_DESTROY)))
-                .subscribe(aLong ->
-                        startActivity(new Intent(SplashActivity.this, LoginActivity.class)));
+                .subscribe(aLong ->{
+                    startActivity(new Intent(SplashActivity.this, LoginActivity.class));
+                    SplashActivity.this.finish();
+                });
     }
 
 

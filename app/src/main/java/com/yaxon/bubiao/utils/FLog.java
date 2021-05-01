@@ -10,7 +10,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 /**
- * Author: openXu
+ * Author: openX
  * Time: 2019/2/26 11:45
  * class: FLog
  * Description:

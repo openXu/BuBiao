@@ -19,7 +19,7 @@ import com.yaxon.bubiao.utils.FontUtil;
 
 
 /**
- * autour : openXu
+ * autour : openX
  * date : 2017/7/24 10:46
  * className : ProgressBar
  * version : 1.0

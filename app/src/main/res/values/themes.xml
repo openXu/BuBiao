@@ -26,7 +26,7 @@
     <!--自定义标题栏样式-->
     <style name="TitleDefStyle">
         <item name="android:layout_width">match_parent</item>
-        <item name="android:layout_height">@dimen/title_height</item>
+        <item name="android:layout_height">@dimen/dp_48</item>
         <item name="titleTextSize">@dimen/sp_16</item>            <!--文字大小sp-->
         <item name="menuTextSize">@dimen/sp_14</item>            <!--文字大小sp-->
         <item name="textColor">@color/white</item>     <!--文字颜色-->

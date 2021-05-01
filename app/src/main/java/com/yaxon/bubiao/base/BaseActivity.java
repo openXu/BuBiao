@@ -25,7 +25,7 @@ import androidx.databinding.DataBindingUtil;
 import androidx.databinding.ViewDataBinding;
 
 /**
- * Author: openXu
+ * Author: openX
  * Time: 2019/2/27 15:51
  * class: BaseActivity
  * Description:

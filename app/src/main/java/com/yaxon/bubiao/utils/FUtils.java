@@ -23,7 +23,7 @@ import java.util.Set;
 import androidx.core.content.FileProvider;
 
 /**
- * Author: openXu
+ * Author: openX
  * Time: 2019/3/14 11:11
  * class: FUtils
  * Description:

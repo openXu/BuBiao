@@ -14,7 +14,7 @@ import io.reactivex.ObservableEmitter;
 import io.reactivex.ObservableOnSubscribe;
 
 /**
- * Author: openXu
+ * Author: openX
  * Time: 2019/4/1 15:18
  * class: FClickUtil
  * Description: 按钮点击工具

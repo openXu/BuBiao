@@ -17,7 +17,7 @@ import androidx.databinding.ViewDataBinding;
 import androidx.fragment.app.Fragment;
 
 /**
- * Author: openXu
+ * Author: openX
  * Time: 2019/2/28 16:24
  * class: BaseFragment
  * Description:

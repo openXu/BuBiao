@@ -1,10 +1,10 @@
 package com.yaxon.bubiao.restory;
 
 /**
- * Author: openXu
+ * Author: openX
  * Time: 2021/4/30 20:53
  * class: SelectItem
- * Description:
+ * Description: 所有底部弹窗选择对话框item类
  */
 public class SelectItem {
 

@@ -11,7 +11,7 @@ import android.text.style.ForegroundColorSpan;
 
 
 /**
- * autour : openXu
+ * autour : openX
  * date : 2016/7/24 14:12
  * className : FontUtil
  * version : 1.0

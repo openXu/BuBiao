@@ -23,7 +23,7 @@
                 android:layout_height="wrap_content">
                 <RelativeLayout
                     android:layout_width="match_parent"
-                    android:layout_height="@dimen/title_height">
+                    android:layout_height="@dimen/dp_48">
                     <CheckBox
                         android:id="@+id/checkbox"
                         android:layout_width="wrap_content"

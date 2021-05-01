@@ -1,26 +1,5 @@
 <resources>
 
-    <!--title-->
-    <dimen name="title_height">48dp</dimen>
-    <dimen name="title_icon_back_size">16dp</dimen>
-    <dimen name="title_left_space">15dp</dimen>
-    <dimen name="title_right_pace">15dp</dimen>
-
-    <dimen name="activity_sides_margin">10dp</dimen>  <!--根据Android设计指南, 默认屏幕边距-->
-    <dimen name="line_height">.9dp</dimen>   <!--分割线高度-->
-    <dimen name="line_space">7dp</dimen>     <!--分割线高度-->
-
-    <dimen name="common_item_top_bottom_margin">10dp</dimen> <!--item上下边距-->
-    <dimen name="item_lable_space">5dp</dimen>    <!--item中 lable的上下文行距-->
-    <!--字体大小主基调-->
-    <dimen name="text_size_level_big">15sp</dimen>
-    <dimen name="text_size_title">14sp</dimen>
-    <dimen name="text_size_level_def">14sp</dimen>
-    <dimen name="text_size_level_mid">12sp</dimen>
-    <dimen name="text_size_level_small">10sp</dimen>
-    <dimen name="text_size_edit_hint">12sp</dimen>
-
-    <dimen name="dp_20">20dp</dimen>
     <dimen name="dp_04">0.4dp</dimen>
     <dimen name="dp_1">1dp</dimen>
     <dimen name="dp_5">5dp</dimen>
@@ -31,6 +10,7 @@
     <dimen name="dp_16">16dp</dimen>
     <dimen name="dp_18">18dp</dimen>
     <dimen name="dp_19">19dp</dimen>
+    <dimen name="dp_20">20dp</dimen>
     <dimen name="dp_23">23dp</dimen>
     <dimen name="dp_25">25dp</dimen>
     <dimen name="dp_31">31dp</dimen>

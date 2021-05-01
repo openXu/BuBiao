@@ -11,7 +11,7 @@ import android.widget.FrameLayout;
 import java.lang.reflect.Method;
 
 /**
- * autour : openXu
+ * autour : openX
  * date : 2018/3/30 10:03
  * className : AndroidBug5497Workaround
  * version : 1.0

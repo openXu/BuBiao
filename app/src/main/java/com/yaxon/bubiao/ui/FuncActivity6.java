@@ -26,7 +26,9 @@ import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
 
-
+/**
+ * 功能6 ： 参数配置导入导出
+ */
 public class FuncActivity6 extends BaseActivity<ActivityFunc6Binding> {
 
     @Override
@@ -42,6 +44,7 @@ public class FuncActivity6 extends BaseActivity<ActivityFunc6Binding> {
         );
     }
 
+    /**存储权限通过后*/
     @Override
     protected void onPermissionGranted() {
         super.onPermissionGranted();
@@ -64,20 +67,18 @@ public class FuncActivity6 extends BaseActivity<ActivityFunc6Binding> {
             }catch (Exception e){
                 FToast.warning("参数导出失败："+e.getMessage());
             }
-
-
         });
 
         //参数导入
         binding.tvImport.setOnClickListener(v->{
             Intent intent = new Intent(Intent.ACTION_GET_CONTENT);
             intent.addCategory(Intent.CATEGORY_OPENABLE);
+            //不能在新的堆栈开启，否则回调不回来
 //            intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-            intent.setType("image/*");
-//            intent.setType("text/xml");
+//            intent.setType("image/*");
+            intent.setType("text/xml");
             intent = Intent.createChooser(intent, "title");
             startActivityForResult(intent, 100);
-
 
            // Intent intent = new Intent(Intent.ACTION_GET_CONTENT);
 //                intent.setType("file");
@@ -92,25 +93,6 @@ public class FuncActivity6 extends BaseActivity<ActivityFunc6Binding> {
 //            } catch (android.content.ActivityNotFoundException ex) {
 //                Toast.makeText(mContext, "未找到文件管理应用，请安装文件管理应用后再试",Toast.LENGTH_SHORT).show();
 //            }
-
-
-
-        /*    String rootPath = Environment.getExternalStorageDirectory().getAbsolutePath();
-            if (rootPath.endsWith("/")) {
-            } else {
-                rootPath = rootPath + "/";
-            }
-            FLog.w("sd卡根目录："+rootPath);
-            Uri uri;
-            if (Build.VERSION.SDK_INT >= 24) {   //判读版本是否在7.0以上Android 7.0
-                //AndPermission提供了兼容Android7.0及更高系统生成私有文件的Uri的方法：
-                uri = AndPermission.getFileUri(this, new File(rootPath));
-//                        mCurrentPhotoUri = FileProvider.getUriForFile(this, BuildConfig.AUTHORITIES, photoFile);
-            } else {
-                uri = Uri.fromFile(new File(rootPath));
-            }
-            Intent intent = IntentDocumentView.getXmlFileIntent(uri);
-            startActivityForResult(intent,100);*/
         });
     }
 
@@ -123,47 +105,40 @@ public class FuncActivity6 extends BaseActivity<ActivityFunc6Binding> {
         super.onActivityResult(reqCode, resCode, data);
         if(reqCode == 100 && resCode==RESULT_OK){
             // onActivityResult  reqCode=1    resCode:-1   data:Intent { dat=content://com.huawei.hidisk.fileprovider/root/storage/emulated/0/BuBiao.xml
-
             Uri uri = data.getData();
-            FLog.w("选择配置文件："+uri);
+            FLog.w("选择返回Uri = "+uri);
+            //TODO 直接选择导出的文件返回的Uri转换为File失败，文件系统数据库查不到，需要在系统文件夹app复制或者移动到另一个目录才能导入
             File file = FConversUtils.uri2File(uri);
-            if(file==null){
-                FToast.warning("导入的文件不合法");
+            FLog.w("转换为File = "+file);
+            if(file==null || !file.exists()){
+                FToast.warning("未查询到参数文件");
                 return;
             }
-
-   /*         String path = null;
-            if (URLUtil.isFileUrl(uri.toString())) {
-                path = uri.getPath();
-            } else {
-                String[] proj = {MediaStore.Images.Media.DATA};
-                Cursor cursor = getContentResolver().query(uri, proj, null, null, null);
-                if (cursor != null && cursor.moveToFirst()) {
-                    path = cursor.getString(cursor.getColumnIndex(MediaStore.MediaColumns.DATA));
-                }
-            }
-            FToast.warning("选择配置文件"+path);
-            if(TextUtils.isEmpty(path)){
-                FToast.warning("导入的文件不合法");
+            FLog.w("文件名 = "+file.getName());
+            if(!file.getName().equals(spUtil.getSpFileName())){
+                FToast.warning("解析文件错误，请选择名称为"+spUtil.getSpFileName()+"的文件");
                 return;
             }
-            File file = new File(path);*/
-            FLog.w("选择配置文件"+file);
             try {
                 File outFile = spUtil.getSpFile();
-                if(outFile.exists())
-                    FLog.a("本地已经有配置参数，先删除文件"+outFile.delete());
-
+                if(outFile.exists()) {
+                    spUtil.clear();
+                    FLog.a("本地已经有参数文件，清除缓存后会重新加载");
+                    spUtil.getSpFile();
+                }else{
+                    //xml不存在，用户第一次使用，需要手动创建shared_prefs文件夹，避免导入复制xml文件时没有对应文件夹
+                    // /data/data/com.yaxon.bubiao/shared_prefs/
+                    spUtil.mkSpDir();
+                }
                 copyFile(file, outFile);
                 FToast.success("参数导入成功");
             }catch (Exception e){
                 FToast.warning("参数导入失败："+e.getMessage());
             }
-
         }
-
     }
 
+    /**复制文件*/
     private void copyFile(File oldFile, File outFile) throws Exception{
         FileInputStream inputStream = null;
         FileOutputStream outputStream = null;
@@ -190,49 +165,5 @@ public class FuncActivity6 extends BaseActivity<ActivityFunc6Binding> {
     }
 
 
-    public File getFileByUri(Uri uri) {
-        String path = null;
-        if ("file".equals(uri.getScheme())) {
-            path = uri.getEncodedPath();
-            if (path != null) {
-                path = Uri.decode(path);
-                ContentResolver cr = this.getContentResolver();
-                StringBuffer buff = new StringBuffer();
-                buff.append("(").append( MediaStore.Images.ImageColumns.DATA).append("=").append("'" + path + "'").append(")");
-                Cursor cur = cr.query( MediaStore.Images.Media.EXTERNAL_CONTENT_URI, new String[] {  MediaStore.Images.ImageColumns._ID, MediaStore.Images.ImageColumns.DATA }, buff.toString(), null, null);
-                int index = 0;
-                int dataIdx = 0;
-                for (cur.moveToFirst(); !cur.isAfterLast(); cur.moveToNext()) {
-                    index = cur.getColumnIndex( MediaStore.Images.ImageColumns._ID);
-                    index = cur.getInt(index);
-                    dataIdx = cur.getColumnIndex( MediaStore.Images.ImageColumns.DATA);
-                    path = cur.getString(dataIdx);
-                }
-                cur.close();
-                if (index == 0) {
-                } else {
-                    Uri u = Uri.parse("content://media/external/images/media/" + index);
-                    System.out.println("temp uri is :" + u);
-                }
-            }
-            if (path != null) {
-                return new File(path);
-            }
-        } else if ("content".equals(uri.getScheme())) {
-            // 4.2.2以后
-            String[] proj = { MediaStore.Images.Media.DATA };
-            Cursor cursor = this.getContentResolver().query(uri, proj, null, null, null);
-            if (cursor.moveToFirst()) {
-                int columnIndex = cursor.getColumnIndexOrThrow(MediaStore.Images.Media.DATA);
-                path = cursor.getString(columnIndex);
-            }
-            cursor.close();
-
-            return new File(path);
-        } else {
-//            Log.i(TAG, "Uri Scheme:" + uri.getScheme());
-        }
-        return null;
-    }
 
 }

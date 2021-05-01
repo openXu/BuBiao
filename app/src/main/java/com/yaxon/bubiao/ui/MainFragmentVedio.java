@@ -19,13 +19,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Author: openXu
+ * Author: openX
  * Time: 2021/4/30 11:08
  * class: MainFragment1
  * Description:
  */
 public class MainFragmentVedio extends BaseFragment<FragmentMainVedioBinding> {
-
 
     private List<SelectItem> channelList;
     SharedData spUtil;
@@ -37,8 +36,8 @@ public class MainFragmentVedio extends BaseFragment<FragmentMainVedioBinding> {
     @Override
     public void initView() {
         StatusBarUtil.setPaddingSmart(getContext(), binding.rlOnoff);
-//        public static final String VEDIO_ONOFF = "vedioOnoff";
-//        public static final String VEDIO_CHANNEL = "vedioChannel";
+        spUtil = SharedData.getInstance();
+
         binding.checkbox.setOnCheckedChangeListener((compoundButton, b) -> {
             spUtil.saveData(SpKey.VEDIO_ONOFF, b);
         });
@@ -68,8 +67,9 @@ public class MainFragmentVedio extends BaseFragment<FragmentMainVedioBinding> {
     }
 
     @Override
-    public void initData() {
-        spUtil = SharedData.getInstance();
+    public void onResume() {
+        super.onResume();
+        //每次都重新绑定数据，避免参数导入后，此页面更新不及时
         binding.checkbox.setChecked(spUtil.getData(SpKey.VEDIO_ONOFF, Boolean.class));
         int channel = spUtil.getData(SpKey.VEDIO_CHANNEL, Integer.class);
         if(channel>0){
@@ -80,5 +80,9 @@ public class MainFragmentVedio extends BaseFragment<FragmentMainVedioBinding> {
                 }
             }
         }
+    }
+
+    @Override
+    public void initData() {
     }
 }

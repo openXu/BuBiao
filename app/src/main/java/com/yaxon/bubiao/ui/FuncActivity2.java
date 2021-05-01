@@ -11,7 +11,9 @@ import com.yaxon.bubiao.utils.FLog;
 import com.yaxon.bubiao.utils.toasty.FToast;
 import com.yaxon.bubiao.view.TitleLayout;
 
-
+/**
+ * 功能2 ： 主动安全参数
+ */
 public class FuncActivity2 extends BaseActivity<ActivityFunc2Binding> {
 
     @Override

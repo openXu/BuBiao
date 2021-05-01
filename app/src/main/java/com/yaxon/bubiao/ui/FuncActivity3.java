@@ -1,7 +1,6 @@
 package com.yaxon.bubiao.ui;
 
 
-import android.graphics.Color;
 import android.view.View;
 
 import com.yaxon.bubiao.R;
@@ -15,12 +14,12 @@ import com.yaxon.bubiao.restory.SpKey;
 import com.yaxon.bubiao.utils.FLog;
 import com.yaxon.bubiao.utils.toasty.FToast;
 import com.yaxon.bubiao.view.TitleLayout;
-
-import java.lang.reflect.Field;
 import java.util.ArrayList;
 import java.util.List;
 
-
+/**
+ * 功能3 ： 外接屏预览配置
+ */
 public class FuncActivity3 extends BaseActivity<ActivityFunc3Binding> {
 
 

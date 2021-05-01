@@ -16,7 +16,7 @@ import androidx.annotation.NonNull;
 import androidx.core.content.FileProvider;
 
 /**
- * Author: openXu
+ * Author: openX
  * Time: 2019/3/14 11:37
  * class: FConversUtils
  * Description: 各种转换工具类

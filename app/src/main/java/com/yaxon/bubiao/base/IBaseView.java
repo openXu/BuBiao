@@ -1,7 +1,7 @@
 package com.yaxon.bubiao.base;
 
 /**
- * Author: openXu
+ * Author: openX
  * Time: 2019/3/15 9:42
  * class: IBaseView
  * Description: 定义View(Activity、Fragment)的模板方法

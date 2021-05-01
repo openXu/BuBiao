@@ -13,7 +13,7 @@ import androidx.fragment.app.DialogFragment;
 import androidx.fragment.app.FragmentManager;
 
 /**
- * Author: openXu
+ * Author: openX
  * Time: 2019/4/12 11:36
  * class: TimeConsumDialog
  * Description: 耗时对话框（网络请求，图片处理....）

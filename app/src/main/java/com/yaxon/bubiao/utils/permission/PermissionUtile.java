@@ -16,7 +16,7 @@ import java.util.List;
 import androidx.appcompat.app.AlertDialog;
 
 /**
- * Author: openXu
+ * Author: openX
  * Time: 2019/3/14 15:44
  * class: PermissionUtile
  * Description: 权限工具类

@@ -1,10 +1,19 @@
 package com.yaxon.bubiao.restory;
 
 /**
- * Author: openXu
+ * Author: openX
  * Time: 2021/4/30 17:27
  * class: SpKey
- * Description:
+ * Description: 所有参数对应Key，前缀表示哪个功能，后面表示配置项
+ * 比如FUNC1_ADAS，表示是参数配置中的第一个功能 ”主动安全开关“ 的ADAS配置
+ *
+ * 存储的值类型：
+ *
+ * CheckBox ： boolean
+ * SeekBar : Integer
+ * RadioGroup : Integer
+ * EditText : String
+ * Dialog对话框选择：Integer
  */
 public class SpKey {
 

@@ -1,7 +1,5 @@
 package com.yaxon.bubiao.ui;
 
-import android.content.Intent;
-import android.text.InputFilter;
 import android.text.InputType;
 import android.text.method.DigitsKeyListener;
 import android.view.View;
@@ -9,13 +7,13 @@ import android.view.View;
 import com.yaxon.bubiao.R;
 import com.yaxon.bubiao.base.BaseActivity;
 import com.yaxon.bubiao.databinding.ActivityFunc4Binding;
-import com.yaxon.bubiao.databinding.ActivityFunc6Binding;
 import com.yaxon.bubiao.restory.SpKey;
-import com.yaxon.bubiao.utils.FLog;
 import com.yaxon.bubiao.utils.toasty.FToast;
 import com.yaxon.bubiao.view.TitleLayout;
 
-
+/**
+ * 功能4 ： 部标参数配置
+ */
 public class FuncActivity4 extends BaseActivity<ActivityFunc4Binding> {
 
     @Override
