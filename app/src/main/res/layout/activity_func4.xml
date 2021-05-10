@@ -107,10 +107,9 @@
                     app:hint="@{`请输入车牌号`}"/>
                 <include
                     android:id="@+id/set3_carcolor"
-                    layout="@layout/item_layout_input1"
+                    layout="@layout/item_layout_spinner"
                     app:important="@{View.INVISIBLE}"
-                    app:title="@{`车牌颜色`}"
-                    app:hint="@{`车牌颜色`}"/>
+                    app:title="@{`车牌颜色`}"/>
                 <include
                     android:id="@+id/set3_capital"
                     layout="@layout/item_layout_input1"
