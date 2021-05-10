@@ -75,12 +75,19 @@ public class FuncActivity4 extends BaseActivity<ActivityFunc4Binding> {
             }
             @Override
             public void onItemSelected(View view, int pos, SelectItem data) {
+                if (!selectedColorFirst){
+                    FLog.w("没有选中，隐藏");
+                    binding.set3Carcolor.spinner.getSelectedView().setVisibility(View.INVISIBLE);
+                }
+                selectedColorFirst = true;
             }
         });
 
         binding.set3Capital.edit.setInputType(InputType.TYPE_CLASS_TEXT);
         binding.set3City.edit.setInputType(InputType.TYPE_CLASS_TEXT);
     }
+
+    boolean selectedColorFirst = false;
     @Override
     public void initData() {
 
@@ -99,16 +106,13 @@ public class FuncActivity4 extends BaseActivity<ActivityFunc4Binding> {
         binding.set3Carnum.edit.setText(spUtil.getData(SpKey.FUNC4_CAR_NUMBER, String.class));
 
         int carColor = spUtil.getData(SpKey.FUNC4_CAR_COLOR, Integer.class);
-        boolean selectedColor = false;
+
         for(int i = 0; i< carColorList.size(); i++){
             if(carColor == carColorList.get(i).getId()){
                 FLog.w(i+"设置选择车辆颜色："+carColor);
                 binding.set3Carcolor.spinner.setSelection(i);
-                selectedColor = true;
+                selectedColorFirst = true;
             }
-        }
-        if (!selectedColor){
-            binding.set3Carcolor.spinner.getSelectedView().setVisibility(View.INVISIBLE);
         }
 
         binding.set3Capital.edit.setText(spUtil.getData(SpKey.FUNC4_CAPITAL, String.class));
